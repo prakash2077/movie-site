@@ -1,34 +1,31 @@
 "use client";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import MyList from "@/components/MyList";
 import MyTitle from "@/components/MyTitle";
+import MyButton from "@/components/MyButton";
 
 const movies = [
     { title : 'Dune', id: 1},
     { title : 'Jumanji', id: 2},
     { title : 'After Earth', id: 3},
     { title : 'San Andreas', id: 4},
-    { title : 'San Andreas', id: 5},
+    { title : 'Alice in Wonderland', id: 5},
+    { title : 'Dune 2', id: 6},
 ]
 
 
 export default function Home() {
-  const [pokemons, setPokemons] = useState([]);
-  
-  useEffect(() => {
-    fetch("https://api.vercel.app/pokemon")
-    .then((res) => res.json())
-    .then((data) => setPokemons(data))
-    .catch((err) => console.error("Fetch Error: ", err))
-  }, [])
-
-  console.log(pokemons)
 
   return (
-    <>
-      <MyTitle>Hey Next JS</MyTitle>
+
+    <div className='p-10 flex flex-col '>
+        <MyTitle>Hey Next JS</MyTitle>
       <MyList listThese={movies} />
-      <MyList listThese={pokemons} />
-    </>
+
+      <MyButton linkText={'/movies'} buttonText={'Go to All Movies'} />
+      
+      <MyButton buttonText={'All Users'} linkText={'/users'} />
+
+    </div>
   );
 }

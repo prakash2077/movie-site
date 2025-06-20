@@ -20,7 +20,33 @@
 }
 
 body {
+  position: relative;
   background: var(--background);
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  pointer-events: none;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+a{
+  text-decoration: underline;
+  background-color: #ededed;
+  color: black;
+  padding: 10px 20px;
 }
