@@ -2,6 +2,7 @@
 import MyList from "@/components/MyList";
 import MyTitle from "@/components/MyTitle";
 import MyButton from "@/components/MyButton";
+import CoolButton from "@/components/CoolButton";
 // This is HomePage
 
 export default function Home() {
@@ -21,7 +22,6 @@ export default function Home() {
   ]
   
   return (
-
     <div className='p-10 flex flex-col '>
         <MyTitle>Hey Next JS</MyTitle>
       <MyList listThese={movies} />
@@ -32,6 +32,7 @@ export default function Home() {
       {/* A button to show that link to users route */}
       <MyButton buttonText={'About'} linkText={'/about'} />
       {/* A button that shows the about when clicked */}
+      <CoolButton>Cool Button</CoolButton>
     </div>
   );
 }

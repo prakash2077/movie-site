@@ -1,4 +1,5 @@
 'use client'
+import CoolButton from '@/components/CoolButton';
 import MyButton from '@/components/MyButton';
 import MyList from '@/components/MyList';
 import MyTitle from '@/components/MyTitle';
@@ -20,6 +21,7 @@ const page = () => {
         <MyTitle>All Users</MyTitle>
       <MyList listThese={users} />
       <MyButton linkText={'/'} buttonText={'Go home'} />
+      <CoolButton>Just added for cool look</CoolButton>
     </div>
   )
 }
